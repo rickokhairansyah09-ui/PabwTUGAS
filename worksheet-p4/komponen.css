@@ -1,0 +1,63 @@
+/* ==========================================================================
+   E.1 — Tampilan Dasar Kolom Isian dan Tombol
+   ========================================================================== */
+.form-kolom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);          /* Jarak seragam antara label dan isian */
+  margin-bottom: var(--space-4); /* Jarak antar kelompok isian */
+}
+
+label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+input, select, textarea {
+  font: inherit;                /* Memastikan input mengikuti huruf halaman */
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
+button {
+  font: inherit;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   E.2 & E.3 — Keadaan Fokus dan Tidak Sah (Invalid)
+   ========================================================================== */
+
+/* Muncul saat pengguna bernavigasi memakai tombol Tab */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Menandai input yang salah HANYA setelah pengguna mencoba mengisi/mengirim */
+input:user-invalid {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}
+
+/* Pesan galat disembunyikan secara bawaan */
+.pesan-galat { 
+  display: none; 
+  color: var(--color-danger); 
+  font-size: var(--text-sm); 
+  font-weight: 500;
+}
+
+/* Munculkan pesan galat jika di dalam .form-kolom ada input yang :user-invalid */
+.form-kolom:has(input:user-invalid) .pesan-galat { 
+  display: block; 
+}
