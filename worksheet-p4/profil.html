@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+  KERANGKA AWAL — Halaman Profil Saya
+  PABW 2026/2027 · Pertemuan 3
+
+  Cara pakai:
+  1. Salin berkas ini, ganti nama menjadi profil.html
+  2. Ganti setiap tulisan TODO dengan isi milik Anda SENDIRI
+  3. Simpan, lalu buka di peramban (F5 untuk memuat ulang)
+  4. Kerjakan berurutan mengikuti Lembar B, C, D, dan E pada worksheet
+
+  Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
+  komentar itu adalah daftar periksa Anda sendiri.
+-->
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Olahraga</title>
+
+  <!-- Urutan pemuatan berkas gaya (CSS) -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-baris">
+      <h1>Jadwal Olahraga</h1>
+      
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#jadwal-target">Jadwal & Target</a></li>
+          <li><a href="#catat-latihan">Catat Latihan Baru</a></li>
+          <li><a href="#tentang-saya">Tentang Saya</a></li>
+        </ul>
+      </nav>
+
+      <!-- F.2 Tombol pengalih tema tanpa JavaScript -->
+      <div>
+  <input type="checkbox" id="tema" class="pengalih-tema">
+  <label for="tema" class="tombol-tema">🌙 Gelap / Terang</label>
+</div>
+    </div>
+  </header>
+  <main>
+    <section id="jadwal-target">
+      <h2>Jadwal dan Target Olahraga</h2>
+      
+      
+      <figure>
+        <img src="../images.jpg" 
+             alt="Seseorang sedang berlari santai di taman pada pagi hari" 
+             width="640" height="360" loading="lazy">
+        <figcaption>Rutinitas lari pagi saya setiap hari Rabu</figcaption>
+      </figure>
+
+      
+      <table class="katalog">
+        <caption>Jadwal dan target kalori olahraga mingguan</caption>
+        <thead>
+          <tr>
+            <th scope="col">Hari</th>
+            <th scope="col">Jenis Olahraga</th>
+            <th scope="col">Durasi (menit)</th>
+            <th scope="col">Target Kalori</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Senin</th>
+            <td>Push up & Latihan Fisik</td>
+            <td>30</td>
+            <td>200</td>
+          </tr>
+          <tr>
+            <th scope="row">Rabu</th>
+            <td>Lari</td>
+            <td>45</td>
+            <td>400</td>
+          </tr>
+          <tr>
+            <th scope="row">Sabtu</th>
+            <td>Bersepeda</td>
+            <td>60</td>
+            <td>500</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="catat-latihan">
+      <h2>Catat Latihan</h2>
+      
+     
+     <form action="/simpan" method="post">
+        
+        <div class="form-kolom">
+          <label for="jenis-olahraga">Jenis Olahraga:</label>
+          <input type="text" id="jenis-olahraga" name="jenis-olahraga" required>
+          <span class="pesan-galat">Jenis olahraga wajib diisi.</span>
+        </div>
+        
+        <div class="form-kolom">
+          <label for="tanggal-latihan">Tanggal Latihan:</label>
+          <input type="date" id="tanggal-latihan" name="tanggal-latihan" required>
+          <span class="pesan-galat">Tanggal latihan wajib diisi.</span>
+        </div>
+        
+        <div class="form-kolom">
+          <label for="durasi-menit">Durasi (menit):</label>
+          <input type="number" id="durasi-menit" name="durasi-menit" min="1" required>
+          <span class="pesan-galat">Durasi minimal 1 menit.</span>
+        </div>
+        
+        <button type="submit">Simpan</button>
+      </form>
+    </section>
+  </main>
+
+  <footer id="tentang-saya">
+    <p>Hendricko Muhammad Zuhair Khairansyah · 25523104 · 2026</p>
+  </footer>
+
+</body>
+</html>
