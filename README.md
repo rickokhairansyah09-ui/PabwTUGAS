@@ -15,5 +15,21 @@ Topik halaman saya: Jadwal dan target olahraga saya.
 - Gambar: olahraga-1.webp
 
 ## Catatan penggunaan AI
-Catatan: Aku minta tolong sama AI; dia pasang gambar, bukan aku yang bersusah payah.
+saya minta bantu ai dalam menyambungkan image kedalam code 
 
+## Pertemuan 4 — Design token halaman profil
+ 
+- Berkas gaya yang akan dibuat: tokens.css, base.css, layout.css, komponen.css, tema.css
+- Warna utama: #047857 (Hijau Zamrud), dipilih karena memberikan kesan segar, sehat, dan energik yang sangat cocok untuk halaman bertema Jadwal Olahraga.
+ 
+### Token yang saya tetapkan
+ 
+| Token | Nilai | Untuk apa |
+|---|---|---|
+| --color-primary | #047857 | tombol, tautan, penanda |
+| --color-fg | #1C1917 | warna teks utama |
+| --color-bg | #FAFAF9 | latar halaman |
+| --radius-md | 0.5rem | sudut tombol dan kartu |
+| --space-4 | 1rem | jarak standar antar elemen |
+ 
+Kriteria selesai saya: mengubah --color-primary di satu baris harus mengubah warna tombol, tautan, judul, dan garis fokus.
