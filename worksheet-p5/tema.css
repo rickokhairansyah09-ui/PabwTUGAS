@@ -1,0 +1,47 @@
+/* ==========================================================================
+   F.1 — Tema Gelap Otomatis (Mengikuti Sistem)
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:      #1C1917; /* stone-900 */
+    --color-fg:      #FAFAF9; /* stone-50 */
+    --color-surface: #292524; /* stone-800 */
+    --color-border:  #44403C; /* stone-700 */
+    --color-primary: #10B981; /* emerald-500 (diterangkan agar lolos kontras) */
+    --color-danger:  #F87171;
+    --color-focus:   #6EE7B7;
+    --shadow-1:      0 1px 3px rgba(0, 0, 0, .45);
+  }
+}
+
+/* ==========================================================================
+   F.2 — Tombol Pengalih Tema Manual
+   ========================================================================== */
+.pengalih-tema { 
+  position: absolute; 
+  opacity: 0; 
+  pointer-events: none; 
+}
+
+.tombol-tema { 
+  font-size: var(--text-sm); 
+  cursor: pointer; 
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-weight: 600;
+}
+
+/* Blok manual ini HARUS diletakkan setelah blok @media agar bisa menimpa */
+:root:has(#tema:checked) {
+  --color-bg:      #1C1917;
+  --color-fg:      #FAFAF9;
+  --color-surface: #292524;
+  --color-border:  #44403C;
+  --color-primary: #10B981;
+  --color-danger:  #F87171;
+  --color-focus:   #6EE7B7;
+  --shadow-1:      0 1px 3px rgba(0, 0, 0, .45);
+}

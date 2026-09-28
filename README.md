@@ -33,3 +33,31 @@ saya minta bantu ai dalam menyambungkan image kedalam code
 | --space-4 | 1rem | jarak standar antar elemen |
  
 Kriteria selesai saya: mengubah --color-primary di satu baris harus mengubah warna tombol, tautan, judul, dan garis fokus.
+## Pertemuan 5 — Layout Modern: Flexbox dan Grid
+
+Pada pertemuan ini, halaman `profil.html` disesuaikan tata letaknya menggunakan pembungkus `<div class="page">` dengan kombinasi CSS Grid untuk kerangka utama dan Flexbox untuk komponen.
+
+### 1. Rencana Kerangka Halaman (Grid Utama)
+
+| Bagian Halaman | Peran | Nilai Grid / Ukuran |
+| --- | --- | --- |
+| **Baris Pertama** | Header / Navbar | `auto` (tinggi mengikuti isi) |
+| **Baris Kedua** | Isi Utama (Sidebar & Konten) | `1fr` (mengisi sisa tinggi layar) |
+| **Baris Ketiga** | Footer | `auto` (tinggi mengikuti isi) |
+| **Kolom Isi** | Sidebar & Konten Utama | `16rem 1fr` (Sidebar tetap, konten lentur) |
+
+### 2. Keputusan Penggunaan Flexbox vs Grid
+
+| Bagian | Pilihan | Alasan |
+| --- | --- | --- |
+| **Kepala Halaman (Navbar)** | Flexbox | Menyusun logo/judul dan menu navigasi secara sebaris mendatar (1 dimensi). |
+| **Kerangka Utama (`.page`)** | Grid | Membagi struktur halaman secara kaku atas-bawah (`auto 1fr auto`) (2 dimensi). |
+| **Area Isi (`.isi`)** | Grid | Memisahkan area sidebar (`16rem`) dan konten utama (`1fr`) menggunakan `grid-template-areas`. |
+| **Galeri Kartu (`.galeri`)** | Grid | Mengatur kartu agar beradaptasi otomatis dengan `repeat(auto-fit, minmax(16rem, 1fr))` tanpa media query. |
+| **Isi di Dalam Kartu** | Flexbox | Menyusun teks, durasi, dan tombol secara berurutan dalam satu arah mendatar/vertikal. |
+
+### 3. Penanganan Kasus Tata Letak & Respon Layar
+
+- **Galeri Adaptif:** Menggunakan `repeat(auto-fit, minmax(16rem, 1fr))` sehingga jumlah kolom bertambah/berkurang secara otomatis saat layar berukuran 360 px hingga 1280 px.
+- **Pencegahan Luberan Teks:** Menggunakan `min-width: 0` pada `.kartu__isi` dan `overflow-wrap: anywhere` pada `.kartu__judul` agar teks panjang tidak melebarkan kolom secara paksa.
+- **Konsistensi Jarak:** Seluruh jarak antar-elemen menggunakan variabel token `gap`, tanpa menggunakan margin tempelan atau *float*.

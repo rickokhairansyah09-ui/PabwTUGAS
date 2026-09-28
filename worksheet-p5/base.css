@@ -1,0 +1,51 @@
+/* ==========================================================================
+   C.1 — Reset Ringan & Box-Sizing Global
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box; /* Lebar elemen mencakup padding dan border */
+}
+
+* {
+  margin: 0; /* Hapus jarak bawaan peramban; atur jarak memakai gap */
+}
+
+img {
+  max-width: 100%; /* Hindari gambar melebar keluar wadah */
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   C.2 — Tipografi, Skala Relatif, dan Warna Dasar
+   ========================================================================== */
+html {
+  font-size: 100%; /* Ikuti pengaturan ukuran huruf bawaan peramban pengguna */
+}
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: var(--text-md);
+  line-height: 1.6; /* Jarak baris yang nyaman dibaca */
+  color: var(--color-fg);
+  background: var(--color-bg);
+  padding: var(--space-4);
+}
+
+h1 {
+  font-size: var(--text-3xl);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: var(--text-xl);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: var(--text-md);
+}
+
+/* Membatasi panjang baris paragraf agar nyaman dibaca (45-75 karakter) */
+main p {
+  max-width: 60ch;
+}
