@@ -1,0 +1,38 @@
+:root {
+  /* Lapis Primitif (Skala Warna & Spasi) */
+  --emerald-900: #064e3b;
+  --emerald-700: #047857;
+  --emerald-500: #10b981;
+  --emerald-300: #6ee7b7;
+  --emerald-100: #d1fae5;
+  
+  --stone-900:   #1c1917;
+  --stone-800:   #292524;
+  --stone-700:   #44403c;
+  --stone-200:   #e7e5e4;
+  --stone-100:   #f5f5f4;
+  --stone-50:    #fafaf9;
+  
+  --red-600:     #dc2626;
+  --red-400:     #f87171;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* Lapis Semantik (Tema Terang Bawaan) */
+  --color-bg:      var(--stone-50);
+  --color-fg:      var(--stone-900);
+  --color-surface: #ffffff;
+  --color-border:  var(--stone-200);
+  --color-primary: var(--emerald-700);
+  --color-focus:   var(--emerald-500);
+  --color-danger:  var(--red-600);
+}

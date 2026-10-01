@@ -61,3 +61,21 @@ Pada pertemuan ini, halaman `profil.html` disesuaikan tata letaknya menggunakan 
 - **Galeri Adaptif:** Menggunakan `repeat(auto-fit, minmax(16rem, 1fr))` sehingga jumlah kolom bertambah/berkurang secara otomatis saat layar berukuran 360 px hingga 1280 px.
 - **Pencegahan Luberan Teks:** Menggunakan `min-width: 0` pada `.kartu__isi` dan `overflow-wrap: anywhere` pada `.kartu__judul` agar teks panjang tidak melebarkan kolom secara paksa.
 - **Konsistensi Jarak:** Seluruh jarak antar-elemen menggunakan variabel token `gap`, tanpa menggunakan margin tempelan atau *float*.
+## Pertemuan 6 – Mobile-First Responsive Web Design
+
+- Berkas gaya yang ditambahkan: responsif.css
+- Pendekatan desain: Mobile-first (gaya dasar untuk layar sempit ditulis lebih dulu tanpa media query).
+- Titik henti (breakpoints): 48rem dan 60rem.
+- Perbaikan elemen: Menambahkan pencegahan luberan untuk gambar (max-width: 100%) dan tabel (overflow-x: auto) di base.css.
+
+### Keputusan titik henti saya
+
+| Titik henti | Yang berubah | Kenapa di lebar itu |
+|---|---|---|
+| 48rem | Galeri dari satu kolom menjadi dua kolom. | Layar mulai cukup luas (ukuran tablet) sehingga dua kartu dapat bersandingan dengan rapi tanpa membuat teks di dalamnya terasa sesak. |
+| 60rem | Sidebar bersanding dengan konten utama, galeri menjadi tiga kolom. | Layar desktop sudah sangat lebar, sehingga ruang kosong di sisi kiri bisa dimanfaatkan untuk meletakkan sidebar navigasi. |
+
+Kriteria selesai saya: Halaman menjadi 1 kolom tanpa gulir mendatar di 360px, galeri menjadi 2 kolom di 48rem, dan sidebar berpindah ke samping bersanding dengan konten di 60rem.
+
+## Catatan penggunaan AI
+saya minta bantu ai dalam menyusun tata letak grid untuk responsif.css, memperbaiki kartu yang belum menjadi 1 kolom di layar sempit, dan memasukkan gambar ke dalam kode.
