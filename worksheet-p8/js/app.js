@@ -11,3 +11,13 @@ console.log(typeof profil.nama);
 console.log(typeof jumlahProyek);
    console.log(profil);
    console.log(jumlahProyek);
+const buatPerkenalan = ({ nama, peran }) => {
+  return `${nama} — ${peran}`;
+};
+
+const formatKeahlian = (daftar) => daftar.join(" · ");
+    console.log(buatPerkenalan(profil));
+    console.log(formatKeahlian(profil.keahlian));
+console.log(buatPerkenalan({ nama: "Ayu", peran: "Mahasiswa" }));
+console.log(buatPerkenalan({ nama: "Budi", peran: "Atlet" }));
+console.log(formatKeahlian(["HTML", "CSS"]));
