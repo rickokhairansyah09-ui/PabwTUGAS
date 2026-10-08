@@ -1,0 +1,99 @@
+/* Galeri Adaptif Tanpa Media Query */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+/* Kartu dengan Flexbox di Dalamnya */
+.kartu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 14rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.kartu__isi {
+  min-width: 0; /* Mencegah pelebaran kolom otomatis saat teks panjang */
+}
+
+.kartu__judul {
+  overflow-wrap: anywhere; /* Membungkus teks panjang yang meluber */
+  margin-bottom: var(--space-2);
+}
+
+.kartu__kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+/* Penempatan Sorotan */
+.sorotan {
+  grid-column: span 2;
+  border-left: 4px solid var(--color-primary);
+}
+
+.lencana {
+  display: inline-block;
+  font-size: 0.75rem;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+}
+
+/* Komponen Tombol & Form */
+.tombol {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-fg);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.tombol--utama {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+}
+
+.bagian-form {
+  margin-top: var(--space-8);
+}
+
+.form-latihan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 24rem;
+  margin-top: var(--space-4);
+}
+
+.form-grup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.form-grup input {
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-fg);
+}
+
+/* Validasi Form Sesuai Spesifikasi */
+.form-grup input:user-invalid {
+  border-color: var(--color-danger);
+}
