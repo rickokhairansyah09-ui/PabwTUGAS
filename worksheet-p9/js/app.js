@@ -22,7 +22,7 @@ console.log(buatPerkenalan({ nama: "Ayu", peran: "Mahasiswa" }));
 console.log(buatPerkenalan({ nama: "Budi", peran: "Atlet" }));
 console.log(formatKeahlian(["HTML", "CSS"]));
 
-const daftarProyek = [
+export const daftarProyek = [
   { judul: "Halaman Profil", tahun: 2026, selesai: true },
   { judul: "Worksheet JavaScript P8", tahun: 2026, selesai: false },
   { judul: "Tugas Web Pertemuan 3", tahun: 2026, selesai: true },
