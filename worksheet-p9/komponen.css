@@ -109,3 +109,17 @@
   color: white;
   border-color: var(--color-primary);
 }
+.galat {
+  color: var(--color-danger);
+  font-size: 0.875rem;
+  min-height: 1.25rem;
+}
+
+.form-grup input[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.tombol:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
