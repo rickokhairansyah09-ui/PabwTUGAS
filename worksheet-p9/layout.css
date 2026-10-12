@@ -1,0 +1,44 @@
+/* Kerangka Utama Halaman dengan CSS Grid */
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
+/* Navbar dengan Flexbox */
+.navbar {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__menu {
+  display: flex;
+  gap: var(--space-4);
+  list-style: none;
+}
+
+/* Area Isi Halaman (2 Kolom Grid) */
+.isi {
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-template-areas: 
+    "sisi"
+    "utama"; 
+  gap: var(--space-6);
+  padding: var(--space-4); 
+}
+
+.sisi  { grid-area: sisi; }
+.utama { grid-area: utama; }
+
+footer {
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
