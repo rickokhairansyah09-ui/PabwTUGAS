@@ -23,9 +23,9 @@ console.log(buatPerkenalan({ nama: "Budi", peran: "Atlet" }));
 console.log(formatKeahlian(["HTML", "CSS"]));
 
 export const daftarProyek = [
-  { judul: "Halaman Profil", tahun: 2026, selesai: true },
-  { judul: "Worksheet JavaScript P8", tahun: 2026, selesai: false },
-  { judul: "Tugas Web Pertemuan 3", tahun: 2026, selesai: true },
+  { judul: "Halaman Profil", kategori: "web", tahun: 2026, selesai: true },
+  { judul: "Worksheet JavaScript P8", kategori: "latihan", tahun: 2026, selesai: false },
+  { judul: "Tugas Web Pertemuan 3", kategori: "web", tahun: 2026, selesai: true },
 ];
 
 console.table(profil.keahlian);

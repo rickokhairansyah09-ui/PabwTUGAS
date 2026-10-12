@@ -97,3 +97,15 @@
 .form-grup input:user-invalid {
   border-color: var(--color-danger);
 }
+#filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-4) 0;
+}
+
+.tombol.aktif {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
