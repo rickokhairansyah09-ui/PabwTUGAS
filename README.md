@@ -79,3 +79,4 @@ Kriteria selesai saya: Halaman menjadi 1 kolom tanpa gulir mendatar di 360px, ga
 
 ## Catatan penggunaan AI
 saya minta bantu ai dalam menyusun tata letak grid untuk responsif.css, memperbaiki kartu yang belum menjadi 1 kolom di layar sempit, dan memasukkan gambar ke dalam kode.
+
