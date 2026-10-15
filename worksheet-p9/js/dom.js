@@ -20,7 +20,7 @@ function buatKartu(proyek) {
 }
 
 function render(daftar) {
-  wadah.textContent = "";               
+  //wadah.textContent = "";               
   
   if (daftar.length === 0) {            
     kosong.hidden = false;
