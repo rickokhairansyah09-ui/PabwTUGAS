@@ -79,4 +79,36 @@ Kriteria selesai saya: Halaman menjadi 1 kolom tanpa gulir mendatar di 360px, ga
 
 ## Catatan penggunaan AI
 saya minta bantu ai dalam menyusun tata letak grid untuk responsif.css, memperbaiki kartu yang belum menjadi 1 kolom di layar sempit, dan memasukkan gambar ke dalam kode.
+## Pertemuan 11 — Modul, State, dan Penyimpanan Klien
+
+Pada pertemuan ini, arsitektur kode JavaScript dipecah menjadi modul-modul terpisah dengan tanggung jawab tunggal (*Single Responsibility Principle*), pemisahan keadaan aplikasi (*state*) dari tampilan (*DOM*), serta implementasi penyimpanan persisten menggunakan `localStorage`.
+
+### 1. Struktur Modul JavaScript
+Kode dipecah menjadi 5 modul terpisah dengan jalur impor relatif eksplisit (`./` dan ekstensi `.js`):
+- `js/data.js`: Menyimpan data statis profil dan fungsi murni (`saring()`).
+- `js/state.js`: Objek `state` tunggal sebagai *single source of truth*, fungsi pengubah (`isiProyek`, `pilihKategori`, `tambahFavorit`), serta logika `localStorage` (`simpan`, `muat`, `pulihkan`, `aturUlang`).
+- `js/dom.js`: Menangani murni manipulasi antarmuka (`render(state)`, `buatKartu()`, `tandaiTombolAktif()`, status memuat dan pesan galat).
+- `js/events.js`: Wadah seluruh pendengar peristiwa (`pasangPendengar()`) untuk filter, bookmark favorit, tombol atur ulang, dan form latihan.
+- `js/app.js`: Modul orkestrator/perakit yang mengimpor seluruh modul dan memulai aplikasi melalui fungsi `mulai()`.
+- `js/api.js`: Modul pengambil data asinkron dari server/API (dipertahankan dari Pertemuan 10).
+
+### 2. Fitur & Penanganan Keadaan
+- **Tampilan adalah Fungsi Keadaan (UI = f(State))**: Tampilan kartu dan penanda tombol aktif digambar ulang secara reaktif dari objek `state`, tanpa menyimpan keadaan di elemen DOM.
+- **Penyimpanan Klien (LocalStorage)**: Menggunakan `JSON.stringify` dan `JSON.parse` dengan nomor versi skema (`versi: 2`) untuk menyimpan pilihan kategori dan daftar favorit.
+- **Tahan Banting terhadap Kerusakan (Resilience)**: Pembacaan data dibungkus blok `try/catch`. Jika data rusak atau versi tidak cocok, simpanan otomatis dibersihkan (`removeItem`) dan aplikasi kembali ke nilai bawaan secara aman tanpa menyebabkan halaman terhenti/blank.
+- **Tombol Atur Ulang**: Mengembalikan kondisi aplikasi dan menghapus riwayat simpanan di peramban.
+
+### 3. Informasi Lingkungan Pengembangan (F.2 PR Pertemuan 12)
+- **Node.js**: `v24.21.0`
+- **npm**: `11.19.0`
+
+### 4. Deklarasi Penggunaan AI
+- **Pekerjaan Mandiri**: 
+  - Penataan dan pemisahan logika berkas JavaScript (`data.js`, `dom.js`, `events.js`, `app.js`).
+  - Pembuatan tombol favorit dan penyesuaian markup pada `profil.html`.
+  - Pengujian alur di browser, verifikasi Console, dan pengujian kasus simpanan rusak.
+- **Bantuan AI**:
+  - Digunakan sebagai rekan diskusi (pair-programming) untuk mengklarifikasi alur pemisahan modul.
+  - Membantu pengecekan sintaks penanganan galat `try/catch` pada pembacaan skema versi `localStorage`.
+
 
