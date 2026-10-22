@@ -1,7 +1,137 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <HelloWorld />
+  <!-- Pembungkus Utama Grid Halaman -->
+  <div class="page">
+    
+    <!-- Navbar (Flexbox) -->
+    <header class="navbar">
+      <div class="navbar__brand">
+        <h1>Jadwal Olahraga</h1>
+      </div>
+      <nav aria-label="Navigasi Utama">
+        <ul class="navbar__menu">
+          <li><a href="#jadwal">Jadwal & Target</a></li>
+          <li><a href="#catat">Catat Latihan</a></li>
+          <li><a href="#tentang">Tentang Saya</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__tema">
+        <input type="checkbox" id="tema" class="pengalih-tema">
+        <label for="tema" class="tombol-tema">🌙 Mode Gelap</label>
+      </div>
+    </header>
+
+    <!-- Area Isi Halaman (Grid 2 Kolom) -->
+    <div class="isi">
+      <!-- Sidebar Samping -->
+      <aside class="sisi">
+        <h2>Profil Ringkas</h2>
+        <p>Target mingguan: 4 kali latihan kardio dan penguatan otot.</p>
+        <div class="statistik-ringkas">
+          <p><strong>Total Durasi:</strong> 180 Menit</p>
+          <p><strong>Status:</strong> On Track 🔥</p>
+        </div>
+      </aside>
+
+      <!-- Konten Utama -->
+      <main class="utama">
+        <section id="jadwal">
+          <h2>Katalog & Jadwal Latihan</h2>
+          
+          <!-- Galeri Kartu Adaptif (Grid auto-fit) -->
+          <div class="galeri">
+            
+            <!-- Kartu Sorotan (Span 2) -->
+            <article class="kartu sorotan">
+              <img src="/images.jpg" alt="Ilustrasi orang berlari maraton">
+              <div class="kartu__isi">
+                <span class="lencana">Sorotan Utama</span>
+                <h3 class="kartu__judul">Lari Maraton Akhir Pekan</h3>
+                <p>Program peningkatkan stamina jarak jauh di luar ruangan dengan target jarak 10 km.</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>⏱️ 90 Menit</span>
+                <button type="button" class="tombol">Detail Latihan</button>
+              </div>
+            </article>
+
+            <!-- Kartu Biasa 1 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Berenang Gaya Bebas</h3>
+                <p>Latihan melatih otot dada dan pernapasan di kolam renang lokal.</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>⏱️ 45 Menit</span>
+                <button type="button" class="tombol">Detail Latihan</button>
+              </div>
+            </article>
+
+            <!-- Kartu Biasa 2 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Latihan Beban (Gym)</h3>
+                <p>Fokus latihan otot tubuh bagian atas (upper body workout).</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>⏱️ 60 Menit</span>
+                <button type="button" class="tombol">Detail Latihan</button>
+              </div>
+            </article>
+
+            <!-- Kartu Biasa 3 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Yoga & Peregangan</h3>
+                <p>Memperbaiki fleksibilitas tubuh dan relaksasi pikiran.</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>⏱️ 30 Menit</span>
+                <button type="button" class="tombol">Detail Latihan</button>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Daftar Proyek (diisi oleh JavaScript) -->
+        <section id="proyek">
+          <h2>Proyek Saya</h2>
+          <div id="filter">
+            <button type="button" class="tombol" data-kategori="semua">Semua</button>
+            <button type="button" class="tombol" data-kategori="web">Web</button>
+            <button type="button" class="tombol" data-kategori="latihan">Latihan</button>
+            <button type="button" class="tombol" data-kategori="mobile">Mobile</button>
+          </div>
+          <button type="button" class="tombol" id="atur-ulang">Atur ulang</button>
+          <p id="muat" hidden>Memuat data...</p>
+          <ul id="daftar" class="galeri"></ul>
+          <p id="kosong" hidden>Belum ada proyek di kategori ini.</p>
+        </section>
+
+        <!-- Form Pencatatan Latihan -->
+        <section id="catat" class="bagian-form">
+          <h2>Catat Latihan Baru</h2>
+          <form class="form-latihan" id="form-latihan" novalidate>
+            <div class="form-grup">
+              <label for="nama-latihan">Jenis Olahraga</label>
+              <input type="text" id="nama-latihan" required placeholder="Contoh: Bersepeda" aria-describedby="galat-nama">
+              <p class="galat" id="galat-nama"></p>
+            </div>
+            <div class="form-grup">
+              <label for="durasi">Durasi (Menit)</label>
+              <input type="number" id="durasi" min="5" required placeholder="30" aria-describedby="galat-durasi">
+              <p class="galat" id="galat-durasi"></p>
+            </div>
+            <button type="submit" class="tombol tombol--utama" id="tombol-simpan">Simpan Catatan</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <!-- Kaki Halaman (Footer) -->
+    <footer id="tentang">
+      <p>&copy; 2026 Hendricko Muhammad Zuhair Khairansyah. All rights reserved.</p>
+    </footer>
+
+  </div>
 </template>

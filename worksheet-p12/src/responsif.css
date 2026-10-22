@@ -1,0 +1,37 @@
+.page {
+  min-height: 100dvh;
+}
+.isi {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "sisi"
+    "utama";
+  gap: var(--space-6);
+}
+.galeri {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+.sorotan {
+  grid-column: auto;
+}
+@media (min-width: 48rem) {
+  .galeri {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sorotan {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 60rem) {
+  .isi {
+    grid-template-columns: 16rem 1fr;
+    grid-template-areas: "sisi utama";
+  }
+  .galeri {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
