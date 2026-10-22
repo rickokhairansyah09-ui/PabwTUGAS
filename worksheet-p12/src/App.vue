@@ -1,3 +1,11 @@
+<script setup>
+import { profil } from './data.js'
+import KepalaProfil from './components/KepalaProfil.vue'
+import TombolFilter from './components/TombolFilter.vue'
+import DaftarProyek from './components/DaftarProyek.vue'
+import FormKontak from './components/FormKontak.vue'
+</script>
+
 <template>
   <!-- Pembungkus Utama Grid Halaman -->
   <div class="page">
@@ -10,6 +18,7 @@
       <nav aria-label="Navigasi Utama">
         <ul class="navbar__menu">
           <li><a href="#jadwal">Jadwal & Target</a></li>
+          <li><a href="#proyek">Proyek</a></li>
           <li><a href="#catat">Catat Latihan</a></li>
           <li><a href="#tentang">Tentang Saya</a></li>
         </ul>
@@ -24,7 +33,7 @@
     <div class="isi">
       <!-- Sidebar Samping -->
       <aside class="sisi">
-        <h2>Profil Ringkas</h2>
+        <KepalaProfil :profil="profil" />
         <p>Target mingguan: 4 kali latihan kardio dan penguatan otot.</p>
         <div class="statistik-ringkas">
           <p><strong>Total Durasi:</strong> 180 Menit</p>
@@ -96,34 +105,14 @@
         <!-- Daftar Proyek (diisi oleh JavaScript) -->
         <section id="proyek">
           <h2>Proyek Saya</h2>
-          <div id="filter">
-            <button type="button" class="tombol" data-kategori="semua">Semua</button>
-            <button type="button" class="tombol" data-kategori="web">Web</button>
-            <button type="button" class="tombol" data-kategori="latihan">Latihan</button>
-            <button type="button" class="tombol" data-kategori="mobile">Mobile</button>
-          </div>
-          <button type="button" class="tombol" id="atur-ulang">Atur ulang</button>
-          <p id="muat" hidden>Memuat data...</p>
-          <ul id="daftar" class="galeri"></ul>
-          <p id="kosong" hidden>Belum ada proyek di kategori ini.</p>
+          <TombolFilter />
+          <DaftarProyek />
         </section>
 
         <!-- Form Pencatatan Latihan -->
         <section id="catat" class="bagian-form">
           <h2>Catat Latihan Baru</h2>
-          <form class="form-latihan" id="form-latihan" novalidate>
-            <div class="form-grup">
-              <label for="nama-latihan">Jenis Olahraga</label>
-              <input type="text" id="nama-latihan" required placeholder="Contoh: Bersepeda" aria-describedby="galat-nama">
-              <p class="galat" id="galat-nama"></p>
-            </div>
-            <div class="form-grup">
-              <label for="durasi">Durasi (Menit)</label>
-              <input type="number" id="durasi" min="5" required placeholder="30" aria-describedby="galat-durasi">
-              <p class="galat" id="galat-durasi"></p>
-            </div>
-            <button type="submit" class="tombol tombol--utama" id="tombol-simpan">Simpan Catatan</button>
-          </form>
+          <FormKontak />
         </section>
       </main>
     </div>
