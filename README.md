@@ -111,4 +111,35 @@ Kode dipecah menjadi 5 modul terpisah dengan jalur impor relatif eksplisit (`./`
   - Digunakan sebagai rekan diskusi (pair-programming) untuk mengklarifikasi alur pemisahan modul.
   - Membantu pengecekan sintaks penanganan galat `try/catch` pada pembacaan skema versi `localStorage`.
 
+  ## Pertemuan 12 — Build Tooling, npm, dan Framework SPA
+
+Pada pertemuan ini, halaman profil modular dari Pertemuan 11 dimigrasikan (*porting*) ke dalam kerangka kerja Single Page Application (SPA) berbasis komponen menggunakan **Vue 3** dan perkakas build **Vite**.
+
+### 1. Struktur Komponen Proyek
+Antarmuka dipecah menjadi 4 Single File Component (SFC) di dalam `src/components/`:
+- `KepalaProfil.vue`: Menampilkan identitas profil di bagian sidebar, menerima data dari induk via `props: { profil }`.
+- `TombolFilter.vue`: Deretan tombol kategori latihan/proyek dan tombol atur ulang yang terhubung ke state bersama.
+- `DaftarProyek.vue`: Menampilkan galeri kartu proyek secara reaktif dengan arahan `v-for`, penanda bintang favorit (`★ / ☆`), serta indikator status (`v-if` memuat, galat, dan data kosong).
+- `FormKontak.vue`: Formulir pencatatan latihan baru yang dipisahkan ke dalam komponen mandiri.
+
+### 2. Reaktivitas dan Penyimpanan Klien
+- **Reaktivitas Vue**: Menggantikan manipulasi DOM dan fungsi `render(state)` manual dengan `reactive()` dari Vue. Perubahan state langsung memperbarui tampilan secara otomatis.
+- **Siklus Hidup & Pengawasan**: 
+  - `onMounted`: Membaca simpanan terakhir dari `localStorage` via `pulihkan(muat())` dan mengambil data proyek dari `ambilProyek()`.
+  - `watch`: Mengawasi perubahan `state` secara mendalam (`deep: true`) untuk otomatis disimpan ke `localStorage`.
+
+### 3. Informasi Lingkungan & Pengukuran Build
+- **Node.js**: `v24.21.0`
+- **npm**: `11.19.0`
+
+#### Perbandingan Ukuran (Dev vs Production Build):
+| Metrik | Sebelum Build (`npm run dev`) | Sesudah Build (`npm run preview`) |
+| :--- | :---: | :---: |
+| **Ukuran Berkas (Resources)** | 1.5 MB | 96.4 kB |
+| **Jumlah Berkas (Requests)** | 24 berkas | 5 berkas |
+
+### 4. Deklarasi Penggunaan AI
+- **Pekerjaan Mandiri**: Inisialisasi proyek Vite, pengujian fitur di browser (`dev` & `preview`), serta pengukuran tab Network di DevTools.
+- **Bantuan AI**: Memandu urutan pengerjaan sesuai worksheet dan membantu penyesuaian reaktivitas pada `src/state.js`.
+
 
